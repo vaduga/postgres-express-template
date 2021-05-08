@@ -1,11 +1,11 @@
 import Sequelize from "sequelize";
 
 const sequelize = new Sequelize(
-  process.env.DATABASE,
+  process.env.DATABASE_NAME,
   process.env.DATABASE_USER,
   process.env.DATABASE_PASSWORD,
   {
-    host: "ec2-34-252-251-16.eu-west-1.compute.amazonaws.com",
+    host: process.env.DATABASE_HOST,
     dialect: "postgres",
     dialectOptions: {
       ssl: { rejectUnauthorized: false }
